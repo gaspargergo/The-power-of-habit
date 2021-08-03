@@ -25,7 +25,6 @@ ingrainHabit(nailBiting);
 body.addEventListener(e){ //listen for cues and execute habit if there is a craving for revard after a cue
 	for(var i = 0;i < habits.length;i++){
 		if(e == habits[i].cue && habits[i].craving) runHabit(habits[i]);
-		}
 	}
 	
 function runHabit(habit){ 
