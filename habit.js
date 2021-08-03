@@ -7,21 +7,23 @@ function Habit(cue,routine,reward){
 
 var habits = [];
 
-/*adding example*/
 
+/*adding example*/
 function biteNails(){
+	var result = true; //success of the routine
 	try{
 		for(var i = 0; i < fingers.count;i++){
 			fingers[i].bite();
     			}
-    		return true; //succesful routine
     	}
-    	catch return false; //unsuccesful routine
+    	catch result = false; //unsuccesful routine
+    	return result;
+    	
 var nailBiting = new Habit("tension in finger",biteNails,"physical stimulation");
 ingrainHabit(nailBiting);
 
-/*running habits*/
 
+/*running habits*/
 body.addEventListener(e){ //listen for cues and execute habit if there is a craving for revard after a cue
 	for(var i = 0;i < habits.length;i++){
 		if(e == habits[i].cue && habits[i].craving) runHabit(habits[i]);
@@ -37,7 +39,6 @@ function runHabit(habit){
 
 
 /*making and changing habits*/
-
 function ingrainHabit(habit){ //creating craving through repetition
 	var timesNeeded = 10; //number of times needed to create craving, I chose an arbitrary number here
 	for(var i = 0; i < timesNeeded,i++){ 
